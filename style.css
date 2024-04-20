@@ -1,0 +1,16 @@
+body,
+html {
+  background-color: black;
+  overflow: unset;
+  margin: 0px;
+  text-align: center;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#igbtCanvas {
+  background-color: white;
+}
