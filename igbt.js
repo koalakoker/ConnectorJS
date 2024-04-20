@@ -1,25 +1,9 @@
-function drawIGBT(origin, orient = 0, p = currentpen) {
-  drawLine([origin[0], origin[1]], [origin[0] + 0.25 * factor, origin[1]], p);
-  drawLine(
-    [origin[0] + 0.25 * factor, origin[1] - 0.1 * factor],
-    [origin[0] + 0.25 * factor, origin[1] + 0.1 * factor],
-    p
-  );
-  drawLine(
-    [origin[0] + 0.3 * factor, origin[1] - 0.2 * factor],
-    [origin[0] + 0.3 * factor, origin[1] + 0.2 * factor],
-    p
-  );
-  drawLine(
-    [origin[0] + 0.3 * factor, origin[1] + 0.1 * factor],
-    [origin[0] + 0.5 * factor, origin[1] + 0.3 * factor],
-    p
-  );
-  drawLine(
-    [origin[0] + 0.3 * factor, origin[1] - 0.1 * factor],
-    [origin[0] + 0.5 * factor, origin[1] - 0.3 * factor],
-    p
-  );
+function drawIGBT(o, orient = 0, p = currentpen) {
+  drawLine([o[0], o[1]], [o[0] + 0.25, o[1]], p);
+  drawLine([o[0] + 0.25, o[1] - 0.1], [o[0] + 0.25, o[1] + 0.1], p);
+  drawLine([o[0] + 0.3, o[1] - 0.2], [o[0] + 0.3, o[1] + 0.2], p);
+  drawLine([o[0] + 0.3, o[1] - 0.1], [o[0] + 0.5, o[1] - 0.3], p);
+  drawArrow([o[0] + 0.3, o[1] + 0.1], [o[0] + 0.5, o[1] + 0.3], 0.8, p);
 }
 
 class Igbt {
@@ -50,7 +34,7 @@ class Igbt {
   draw(drawOpt = null) {
     drawIGBT(this.obj.pos);
     if (this.orient === 0) {
-      label(this.obj.name, [this.obj.pos[0] + 0.2, this.obj.pos[1] + 0.3]);
+      label(this.obj.name, [this.obj.pos[0] + 0.1, this.obj.pos[1] + 0.4]);
     } else {
       label(this.obj.name, [this.obj.pos[0] + 0.8, this.obj.pos[1] + 0.5]);
     }
