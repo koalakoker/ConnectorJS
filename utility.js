@@ -11,6 +11,20 @@ function ToPoint(a) {
   return a;
 }
 
+function rotate(p, rad) {
+  let rP = [];
+  rP[0] = p[0] * Math.cos(rad) - p[1] * Math.sin(rad);
+  rP[1] = p[1] * Math.cos(rad) + p[0] * Math.sin(rad);
+  return rP;
+}
+
+function translate(p, o) {
+  let rP = [];
+  rP[0] = p[0] + o[0];
+  rP[1] = p[1] + p[1];
+  return rP;
+}
+
 // Utility functions for drawing
 function drawLine(start, end, p = currentpen) {
   start = ToPoint(start);
@@ -52,8 +66,19 @@ function drawArrow(start, end, arrowPos, p = currentpen) {
   ctx.fill();
 }
 
+function drawPolygon(pList, p = currentpen) {
+  //ctx.beginPath();
+  for (let i = 0; i < pList.length; i++) {
+    let p = pList[i];
+    p = ToPoint(p);
+    drawDot(p, new Pen("red", 5));
+    //ctx.lineTo(p[0] * factor, p[1] * factor);
+  }
+  //ctx.fill();
+}
+
 function drawDot(pos, p = currentpen) {
-  const rad = 5;
+  const rad = p.width;
   ctx.fillStyle = p.color;
   ctx.beginPath();
   ctx.arc(pos.x, pos.y, rad, 0, Math.PI * 2, true);

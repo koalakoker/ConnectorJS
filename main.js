@@ -14,14 +14,14 @@ function drawLeg(origin, phase) {
 
   const D1 = new Diode(
     [GetAnchorPos(Q1, 2)[0] + 0.3, GetAnchorPos(Q1, 2)[1]],
-    90,
-    "$D_" + HS + "$"
+    "$D_" + HS + "$",
+    Math.PI / 2
   );
   D1.draw();
   const D2 = new Diode(
     [GetAnchorPos(Q2, 2)[0] + 0.3, GetAnchorPos(Q2, 2)[1]],
-    90,
-    "$D_" + LS + "$"
+    "$D_" + LS + "$",
+    Math.PI / 2
   );
   D2.draw();
 
