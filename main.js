@@ -16,12 +16,8 @@ setCurrentPen(new Pen("red", 1));
 drawCircle(new Point(0, 400), 75);
 drawCircle(new Point(300, 40), 40, new Pen("green", 1));
 
-let angle = 0;
-let rad = 100;
-let pL = [];
-for (let i = 0; i < 5; i++) {
-  let pt = new Point(200 + rad * Math.sin(angle), 200 + rad * Math.cos(angle));
-  pL.push(pt);
-  angle += (Math.PI * 2) / 5;
-}
-drawPoly(pL);
+let p1 = new Polygon(new Point(200, 200), 100, 5, 0);
+p1.draw();
+
+let r1 = new Rectangle(new Point(300, 300), 80, 30, gradToRad(45));
+r1.draw();
