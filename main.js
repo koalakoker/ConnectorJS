@@ -1,7 +1,20 @@
-const p1 = new Polygon(new Point(200, 200), 100, 4, 0);
-const r1 = new Rectangle(new Point(200, 200), 100, 50, 0, new Pen("red"));
+// Animation Set and run
+const fps = 60;
+const dt = 1 / fps;
+const intervalID = setInterval(draw, 1000 / fps);
 
-const comp = new Composition();
-comp.addShape(p1);
-comp.addShape(r1);
-comp.draw();
+const scene = new Composition();
+const factory = new RectFact((s) => {
+  scene.addShape(s);
+  txt.value = JSON.stringify(scene);
+});
+
+function load() {
+  console.log("Load");
+}
+
+function draw() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  factory.draw();
+  scene.draw();
+}
