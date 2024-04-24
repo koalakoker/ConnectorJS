@@ -3,12 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IGBT Drawing</title>
+    <title>Drawing</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <canvas id="canvas" width="400" height="400"></canvas>
     <textarea id="txt" cols="50" rows="30">Hello</textarea>
+    <select id="shape-select" onchange="handleShapeChange()">
+      <option value="rect">Rect</option>
+      <option value="poly">Poly</option>
+    </select>
     <button onclick="reset()">Reset</button>
     <button onclick="load()">Load</button>
 
@@ -23,6 +27,7 @@
     <script src="lib/shapes/composition.js"></script>
 
     <script src="lib/factories/rectFact.js"></script>
+    <script src="lib/factories/polyFact.js"></script>
 
     <script src="test/shapes.js"></script>
 

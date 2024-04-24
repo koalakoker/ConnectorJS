@@ -4,7 +4,7 @@ const dt = 1 / fps;
 const intervalID = setInterval(draw, 1000 / fps);
 
 let scene = new Composition();
-const factory = new RectFact((s) => {
+let factory = new RectFact((s) => {
   scene.addShape(s);
   txt.value = JSON.stringify(scene);
 });
@@ -23,6 +23,9 @@ function reviveScene(key, value) {
   const rect = Rectangle.revive(value);
   if (rect !== undefined) return rect;
 
+  const poly = Polygon.revive(value);
+  if (poly !== undefined) return poly;
+
   return value;
 }
 
@@ -36,4 +39,21 @@ function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   factory.draw();
   scene.draw();
+}
+
+function handleShapeChange() {
+  var selectElement = document.getElementById("shape-select");
+  var selectedValue = selectElement.value;
+
+  if (selectedValue === "rect") {
+    factory = new RectFact((s) => {
+      scene.addShape(s);
+      txt.value = JSON.stringify(scene);
+    });
+  } else if (selectedValue === "poly") {
+    factory = new PolyFact((s) => {
+      scene.addShape(s);
+      txt.value = JSON.stringify(scene);
+    });
+  }
 }
