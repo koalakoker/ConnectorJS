@@ -1,0 +1,11 @@
+{
+  "shapes": [
+    {
+      "center": { "x": 81.75, "y": 64.5 },
+      "width": 78,
+      "height": 54,
+      "angle": 0,
+      "pen": { "strokeColor": "black", "fillColor": "", "width": 3, "dash": [] }
+    }
+  ]
+}
