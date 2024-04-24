@@ -14,48 +14,22 @@ function reset() {
 }
 
 function reviveScene(key, value) {
-  if (
-    key === "pen" &&
-    typeof value === "object" &&
-    value !== null &&
-    "strokeColor" in value &&
-    "fillColor" in value &&
-    "width" in value &&
-    "dash" in value
-  ) {
-    return new Pen(value.strokeColor, value.fillColor, value.width, value.dash);
-  }
-  if (
-    typeof value === "object" &&
-    value !== null &&
-    "center" in value &&
-    "width" in value &&
-    "height" in value &&
-    "angle" in value &&
-    "pen" in value
-  ) {
-    return new Rectangle(
-      value.center,
-      value.width,
-      value.height,
-      value.angle,
-      value.pen
-    );
-  }
-  if (typeof value === "object" && value !== null && "shapes" in value) {
-    const nC = new Composition();
-    value.shapes.map((shape) => nC.addShape(shape));
-    return nC;
-  }
+  const nc = Composition.revive(value);
+  if (nc !== undefined) return nc;
+
+  const pen = Pen.revive(value);
+  if (pen !== undefined) return pen;
+
+  const rect = Rectangle.revive(value);
+  if (rect !== undefined) return rect;
+
   return value;
 }
 
 function load() {
-  console.log(scene);
   scene.reset();
   const jsonString = txt.value;
   scene = JSON.parse(jsonString, reviveScene);
-  console.log(scene);
 }
 
 function draw() {
