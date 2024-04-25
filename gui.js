@@ -20,8 +20,13 @@ function mouseUp(e) {
   factory.mouseUp(p);
 }
 
+function wheel(e) {
+  factory.wheel(Math.sign(e.deltaY));
+}
+
 document.addEventListener("mousedown", mouseDown);
 document.addEventListener("mousemove", mouseMove);
 document.addEventListener("mouseup", mouseUp);
+document.addEventListener("wheel", wheel);
 
 const txt = document.getElementById("txt");
