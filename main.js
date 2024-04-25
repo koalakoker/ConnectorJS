@@ -3,11 +3,17 @@ const fps = 60;
 const dt = 1 / fps;
 const intervalID = setInterval(draw, 1000 / fps);
 
-let scene = new Composition();
-let factory = new RectFact((s) => {
+const rectFact = new RectFact((s) => {
   scene.addShape(s);
   txt.value = JSON.stringify(scene);
 });
+const polyFact = new PolyFact((s) => {
+  scene.addShape(s);
+  txt.value = JSON.stringify(scene);
+});
+
+let scene = new Composition();
+let factory = rectFact;
 
 function reset() {
   scene.reset();
@@ -46,14 +52,12 @@ function handleShapeChange() {
   var selectedValue = selectElement.value;
 
   if (selectedValue === "rect") {
-    factory = new RectFact((s) => {
-      scene.addShape(s);
-      txt.value = JSON.stringify(scene);
-    });
-  } else if (selectedValue === "poly") {
-    factory = new PolyFact((s) => {
-      scene.addShape(s);
-      txt.value = JSON.stringify(scene);
-    });
+    factory = rectFact;
+  }
+  if (selectedValue === "poly") {
+    factory = polyFact;
+  }
+  if (selectedValue === "select") {
+    factory = new Select(scene);
   }
 }
