@@ -24,9 +24,19 @@ function wheel(e) {
   factory.wheel(Math.sign(e.deltaY));
 }
 
+function keypress(e) {
+  if (e.key === "+") {
+    factory.wheel(-1);
+  }
+  if (e.key === "-") {
+    factory.wheel(1);
+  }
+}
+
 document.addEventListener("mousedown", mouseDown);
 document.addEventListener("mousemove", mouseMove);
 document.addEventListener("mouseup", mouseUp);
 document.addEventListener("wheel", wheel);
+document.addEventListener("keypress", keypress);
 
 const txt = document.getElementById("txt");
