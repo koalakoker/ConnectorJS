@@ -2,7 +2,7 @@ function getPosOnCanvas(p) {
   let rect = canvas.getBoundingClientRect();
   let cX = rect.left;
   let cY = rect.top;
-  return new Point(p.x - cX, p.y - cY);
+  return new Point(Math.round(p.x - cX), Math.round(p.y - cY));
 }
 
 function mouseDown(e) {
