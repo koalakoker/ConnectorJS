@@ -7,6 +7,10 @@ const lineFact = new LineFact((s) => {
   scene.addShape(s);
   txt.value = JSON.stringify(scene);
 });
+const circleFact = new CircleFact((s) => {
+  scene.addShape(s);
+  txt.value = JSON.stringify(scene);
+});
 const rectFact = new RectFact((s) => {
   scene.addShape(s);
   txt.value = JSON.stringify(scene);
@@ -35,6 +39,12 @@ function reviveScene(key, value) {
   rObj = Line.revive(value);
   if (rObj !== undefined) return rObj;
 
+  rObj = Circle.revive(value);
+  if (rObj !== undefined) return rObj;
+
+  // rObj = Arc.revive(value);
+  // if (rObj !== undefined) return rObj;
+
   rObj = Rectangle.revive(value);
   if (rObj !== undefined) return rObj;
 
@@ -62,6 +72,12 @@ function handleShapeChange() {
 
   if (selectedValue === "line") {
     factory = lineFact;
+  }
+  if (selectedValue === "circle") {
+    factory = circleFact;
+  }
+  if (selectedValue === "arc") {
+    factory = arcFact;
   }
   if (selectedValue === "rect") {
     factory = rectFact;
