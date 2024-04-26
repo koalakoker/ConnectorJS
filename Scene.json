@@ -3,6 +3,7 @@
     {
       "type": "rectangle",
       "hanldeMargin": 10,
+      "shapeMargin": 10,
       "handles": [
         { "pos": { "x": 99, "y": 68 }, "show": false, "highLight": false },
         { "pos": { "x": 152, "y": 107 }, "show": false, "highLight": false },
@@ -17,14 +18,15 @@
     {
       "type": "rectangle",
       "hanldeMargin": 10,
+      "shapeMargin": 10,
       "handles": [
         {
-          "pos": { "x": 185.9758327339277, "y": 88.03450420399147 },
+          "pos": { "x": 185.9758327339277, "y": 88.0345042039915 },
           "show": false,
           "highLight": false
         },
         {
-          "pos": { "x": 303.0241672660723, "y": 169.96549579600853 },
+          "pos": { "x": 303.0241672660723, "y": 169.9654957960085 },
           "show": false,
           "highLight": false
         },
@@ -43,6 +45,7 @@
     {
       "type": "polygon",
       "hanldeMargin": 10,
+      "shapeMargin": 10,
       "handles": [
         { "pos": { "x": 147, "y": 300 }, "show": false, "highLight": false },
         { "pos": { "x": 214, "y": 300 }, "show": false, "highLight": false }
@@ -56,6 +59,7 @@
     {
       "type": "polygon",
       "hanldeMargin": 10,
+      "shapeMargin": 10,
       "handles": [
         { "pos": { "x": 259, "y": 286 }, "show": false, "highLight": false },
         { "pos": { "x": 283, "y": 286 }, "show": false, "highLight": false }
@@ -69,6 +73,7 @@
     {
       "type": "line",
       "hanldeMargin": 10,
+      "shapeMargin": 10,
       "handles": [
         { "pos": { "x": 328, "y": 51 }, "show": false, "highLight": false },
         { "pos": { "x": 158, "y": 170 }, "show": false, "highLight": false }
@@ -80,12 +85,61 @@
     {
       "type": "line",
       "hanldeMargin": 10,
+      "shapeMargin": 10,
       "handles": [
         { "pos": { "x": 61, "y": 315 }, "show": false, "highLight": false },
         { "pos": { "x": 344, "y": 271 }, "show": false, "highLight": false }
       ],
       "start": { "x": 61, "y": 315 },
       "end": { "x": 344, "y": 271 },
+      "pen": { "strokeColor": "black", "fillColor": "", "width": 3, "dash": [] }
+    },
+    {
+      "type": "circle",
+      "hanldeMargin": 10,
+      "shapeMargin": 10,
+      "handles": [
+        { "pos": { "x": 289, "y": 226 }, "show": false, "highLight": false },
+        {
+          "pos": { "x": 314.4950975679639, "y": 226 },
+          "show": false,
+          "highLight": false
+        }
+      ],
+      "center": { "x": 289, "y": 226 },
+      "radius": 25.495097567963924,
+      "pen": { "strokeColor": "black", "fillColor": "", "width": 3, "dash": [] }
+    },
+    {
+      "type": "circle",
+      "hanldeMargin": 10,
+      "shapeMargin": 10,
+      "handles": [
+        { "pos": { "x": 363, "y": 97 }, "show": false, "highLight": false },
+        {
+          "pos": { "x": 386.7065391822594, "y": 97 },
+          "show": false,
+          "highLight": false
+        }
+      ],
+      "center": { "x": 363, "y": 97 },
+      "radius": 23.706539182259394,
+      "pen": { "strokeColor": "black", "fillColor": "", "width": 3, "dash": [] }
+    },
+    {
+      "type": "circle",
+      "hanldeMargin": 10,
+      "shapeMargin": 10,
+      "handles": [
+        { "pos": { "x": 222, "y": 203 }, "show": false, "highLight": false },
+        {
+          "pos": { "x": 380.927656498169, "y": 203 },
+          "show": false,
+          "highLight": false
+        }
+      ],
+      "center": { "x": 222, "y": 203 },
+      "radius": 158.927656498169,
       "pen": { "strokeColor": "black", "fillColor": "", "width": 3, "dash": [] }
     }
   ]

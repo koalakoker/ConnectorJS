@@ -11,6 +11,10 @@ const circleFact = new CircleFact((s) => {
   scene.addShape(s);
   txt.value = JSON.stringify(scene);
 });
+const arcFact = new ArcFact((s) => {
+  scene.addShape(s);
+  txt.value = JSON.stringify(scene);
+});
 const rectFact = new RectFact((s) => {
   scene.addShape(s);
   txt.value = JSON.stringify(scene);
@@ -42,8 +46,8 @@ function reviveScene(key, value) {
   rObj = Circle.revive(value);
   if (rObj !== undefined) return rObj;
 
-  // rObj = Arc.revive(value);
-  // if (rObj !== undefined) return rObj;
+  rObj = Arc.revive(value);
+  if (rObj !== undefined) return rObj;
 
   rObj = Rectangle.revive(value);
   if (rObj !== undefined) return rObj;
