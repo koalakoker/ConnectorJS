@@ -3,6 +3,10 @@ const fps = 60;
 const dt = 1 / fps;
 const intervalID = setInterval(draw, 1000 / fps);
 
+const lineFact = new LineFact((s) => {
+  scene.addShape(s);
+  txt.value = JSON.stringify(scene);
+});
 const rectFact = new RectFact((s) => {
   scene.addShape(s);
   txt.value = JSON.stringify(scene);
@@ -13,24 +17,29 @@ const polyFact = new PolyFact((s) => {
 });
 
 let scene = new Composition();
-let factory = rectFact;
+let factory = lineFact;
 
 function reset() {
   scene.reset();
 }
 
 function reviveScene(key, value) {
-  const nc = Composition.revive(value);
-  if (nc !== undefined) return nc;
+  let rObj;
 
-  const pen = Pen.revive(value);
-  if (pen !== undefined) return pen;
+  rObj = Composition.revive(value);
+  if (rObj !== undefined) return rObj;
 
-  const rect = Rectangle.revive(value);
-  if (rect !== undefined) return rect;
+  rObj = Pen.revive(value);
+  if (rObj !== undefined) return rObj;
 
-  const poly = Polygon.revive(value);
-  if (poly !== undefined) return poly;
+  rObj = Line.revive(value);
+  if (rObj !== undefined) return rObj;
+
+  rObj = Rectangle.revive(value);
+  if (rObj !== undefined) return rObj;
+
+  rObj = Polygon.revive(value);
+  if (rObj !== undefined) return rObj;
 
   return value;
 }
@@ -51,6 +60,9 @@ function handleShapeChange() {
   var selectElement = document.getElementById("shape-select");
   var selectedValue = selectElement.value;
 
+  if (selectedValue === "line") {
+    factory = lineFact;
+  }
   if (selectedValue === "rect") {
     factory = rectFact;
   }

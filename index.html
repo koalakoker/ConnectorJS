@@ -10,6 +10,7 @@
     <canvas id="canvas" width="400" height="400"></canvas>
     <textarea id="txt" cols="50" rows="30">Hello</textarea>
     <select id="shape-select" onchange="handleShapeChange()">
+      <option value="line">Line</option>
       <option value="rect">Rect</option>
       <option value="poly">Poly</option>
       <option value="select">Select</option>
@@ -24,11 +25,13 @@
 
     <script src="lib/shapes/utils/handle.js"></script>
     <script src="lib/shapes/shape.js"></script>
+    <script src="lib/shapes/line.js"></script>
     <script src="lib/shapes/rectangle.js"></script>
     <script src="lib/shapes/polygon.js"></script>
     <script src="lib/shapes/composition.js"></script>
 
     <script src="lib/factories/factory.js"></script>
+    <script src="lib/factories/lineFact.js"></script>
     <script src="lib/factories/rectFact.js"></script>
     <script src="lib/factories/polyFact.js"></script>
     <script src="lib/factories/select.js"></script>

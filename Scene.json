@@ -45,12 +45,12 @@
       "hanldeMargin": 10,
       "handles": [
         { "pos": { "x": 147, "y": 300 }, "show": false, "highLight": false },
-        { "pos": { "x": 121, "y": 238 }, "show": false, "highLight": false }
+        { "pos": { "x": 214, "y": 300 }, "show": false, "highLight": false }
       ],
       "center": { "x": 147, "y": 300 },
       "radius": 67,
       "sides": 5,
-      "angle": -1.967875772019879,
+      "angle": 0,
       "pen": { "strokeColor": "black", "fillColor": "", "width": 3, "dash": [] }
     },
     {
@@ -58,12 +58,34 @@
       "hanldeMargin": 10,
       "handles": [
         { "pos": { "x": 259, "y": 286 }, "show": false, "highLight": false },
-        { "pos": { "x": 283, "y": 284 }, "show": false, "highLight": false }
+        { "pos": { "x": 283, "y": 286 }, "show": false, "highLight": false }
       ],
       "center": { "x": 259, "y": 286 },
       "radius": 24,
       "sides": 5,
-      "angle": -0.08314123188844123,
+      "angle": 0,
+      "pen": { "strokeColor": "black", "fillColor": "", "width": 3, "dash": [] }
+    },
+    {
+      "type": "line",
+      "hanldeMargin": 10,
+      "handles": [
+        { "pos": { "x": 328, "y": 51 }, "show": false, "highLight": false },
+        { "pos": { "x": 158, "y": 170 }, "show": false, "highLight": false }
+      ],
+      "start": { "x": 328, "y": 51 },
+      "end": { "x": 158, "y": 170 },
+      "pen": { "strokeColor": "black", "fillColor": "", "width": 3, "dash": [] }
+    },
+    {
+      "type": "line",
+      "hanldeMargin": 10,
+      "handles": [
+        { "pos": { "x": 61, "y": 315 }, "show": false, "highLight": false },
+        { "pos": { "x": 344, "y": 271 }, "show": false, "highLight": false }
+      ],
+      "start": { "x": 61, "y": 315 },
+      "end": { "x": 344, "y": 271 },
       "pen": { "strokeColor": "black", "fillColor": "", "width": 3, "dash": [] }
     }
   ]
