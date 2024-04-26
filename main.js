@@ -73,3 +73,14 @@ function handleShapeChange() {
     factory = new Select(scene);
   }
 }
+
+window.onload = function () {
+  fetch("Scene.json")
+    .then((response) => response.json())
+    .then((data) => {
+      const jsonString = JSON.stringify(data, null, 2);
+      document.getElementById("txt").value = jsonString;
+      scene = JSON.parse(jsonString, reviveScene);
+    })
+    .catch((error) => console.error("Error loading JSON file:", error));
+};
