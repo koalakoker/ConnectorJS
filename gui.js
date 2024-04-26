@@ -1,8 +1,11 @@
 function getPosOnCanvas(p) {
-  let rect = canvas.getBoundingClientRect();
-  let cX = rect.left;
-  let cY = rect.top;
-  return new Point(Math.round(p.x - cX), Math.round(p.y - cY));
+  const rect = canvas.getBoundingClientRect();
+  const cX = rect.left;
+  const cY = rect.top;
+  let pt = new Point(p.x - cX, p.y - cY);
+  pt = pt.int();
+  pt = grid.snap(pt);
+  return pt;
 }
 
 function mouseDown(e) {

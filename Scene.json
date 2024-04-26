@@ -1,145 +1,15 @@
 {
   "shapes": [
     {
-      "type": "rectangle",
-      "hanldeMargin": 10,
-      "shapeMargin": 10,
-      "handles": [
-        { "pos": { "x": 99, "y": 68 }, "show": false, "highLight": false },
-        { "pos": { "x": 152, "y": 107 }, "show": false, "highLight": false },
-        { "pos": { "x": 152, "y": 87.5 }, "show": false, "highLight": false }
-      ],
-      "center": { "x": 125.5, "y": 87.5 },
-      "width": 53,
-      "height": 39,
-      "angle": 0,
-      "pen": { "strokeColor": "black", "fillColor": "", "width": 3, "dash": [] }
-    },
-    {
-      "type": "rectangle",
-      "hanldeMargin": 10,
-      "shapeMargin": 10,
-      "handles": [
-        {
-          "pos": { "x": 185.9758327339277, "y": 88.0345042039915 },
-          "show": false,
-          "highLight": false
-        },
-        {
-          "pos": { "x": 303.0241672660723, "y": 169.9654957960085 },
-          "show": false,
-          "highLight": false
-        },
-        {
-          "pos": { "x": 258.6718221977011, "y": 117.10842922079902 },
-          "show": false,
-          "highLight": false
-        }
-      ],
-      "center": { "x": 244.5, "y": 129 },
-      "width": 37,
-      "height": 138,
-      "angle": -0.6981317007977318,
-      "pen": { "strokeColor": "black", "fillColor": "", "width": 3, "dash": [] }
-    },
-    {
-      "type": "polygon",
-      "hanldeMargin": 10,
-      "shapeMargin": 10,
-      "handles": [
-        { "pos": { "x": 147, "y": 300 }, "show": false, "highLight": false },
-        { "pos": { "x": 214, "y": 300 }, "show": false, "highLight": false }
-      ],
-      "center": { "x": 147, "y": 300 },
-      "radius": 67,
-      "sides": 5,
-      "angle": 0,
-      "pen": { "strokeColor": "black", "fillColor": "", "width": 3, "dash": [] }
-    },
-    {
-      "type": "polygon",
-      "hanldeMargin": 10,
-      "shapeMargin": 10,
-      "handles": [
-        { "pos": { "x": 259, "y": 286 }, "show": false, "highLight": false },
-        { "pos": { "x": 283, "y": 286 }, "show": false, "highLight": false }
-      ],
-      "center": { "x": 259, "y": 286 },
-      "radius": 24,
-      "sides": 5,
-      "angle": 0,
-      "pen": { "strokeColor": "black", "fillColor": "", "width": 3, "dash": [] }
-    },
-    {
       "type": "line",
       "hanldeMargin": 10,
       "shapeMargin": 10,
       "handles": [
-        { "pos": { "x": 328, "y": 51 }, "show": false, "highLight": false },
-        { "pos": { "x": 158, "y": 170 }, "show": false, "highLight": false }
+        { "pos": { "x": 98, "y": 310 }, "show": false, "highLight": false },
+        { "pos": { "x": 331, "y": 59 }, "show": false, "highLight": false }
       ],
-      "start": { "x": 328, "y": 51 },
-      "end": { "x": 158, "y": 170 },
-      "pen": { "strokeColor": "black", "fillColor": "", "width": 3, "dash": [] }
-    },
-    {
-      "type": "line",
-      "hanldeMargin": 10,
-      "shapeMargin": 10,
-      "handles": [
-        { "pos": { "x": 61, "y": 315 }, "show": false, "highLight": false },
-        { "pos": { "x": 344, "y": 271 }, "show": false, "highLight": false }
-      ],
-      "start": { "x": 61, "y": 315 },
-      "end": { "x": 344, "y": 271 },
-      "pen": { "strokeColor": "black", "fillColor": "", "width": 3, "dash": [] }
-    },
-    {
-      "type": "circle",
-      "hanldeMargin": 10,
-      "shapeMargin": 10,
-      "handles": [
-        { "pos": { "x": 289, "y": 226 }, "show": false, "highLight": false },
-        {
-          "pos": { "x": 314.4950975679639, "y": 226 },
-          "show": false,
-          "highLight": false
-        }
-      ],
-      "center": { "x": 289, "y": 226 },
-      "radius": 25.495097567963924,
-      "pen": { "strokeColor": "black", "fillColor": "", "width": 3, "dash": [] }
-    },
-    {
-      "type": "circle",
-      "hanldeMargin": 10,
-      "shapeMargin": 10,
-      "handles": [
-        { "pos": { "x": 363, "y": 97 }, "show": false, "highLight": false },
-        {
-          "pos": { "x": 386.7065391822594, "y": 97 },
-          "show": false,
-          "highLight": false
-        }
-      ],
-      "center": { "x": 363, "y": 97 },
-      "radius": 23.706539182259394,
-      "pen": { "strokeColor": "black", "fillColor": "", "width": 3, "dash": [] }
-    },
-    {
-      "type": "circle",
-      "hanldeMargin": 10,
-      "shapeMargin": 10,
-      "handles": [
-        { "pos": { "x": 222, "y": 203 }, "show": false, "highLight": false },
-        {
-          "pos": { "x": 380.927656498169, "y": 203 },
-          "show": false,
-          "highLight": false
-        }
-      ],
-      "center": { "x": 222, "y": 203 },
-      "radius": 158.927656498169,
+      "start": { "x": 98, "y": 310 },
+      "end": { "x": 331, "y": 59 },
       "pen": { "strokeColor": "black", "fillColor": "", "width": 3, "dash": [] }
     }
   ]
