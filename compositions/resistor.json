@@ -2,18 +2,22 @@
   "type": "composition",
   "hanldeMargin": 10,
   "shapeMargin": 10,
-  "handles": [],
+  "handles": [
+    { "pos": { "x": 0, "y": 0 }, "show": false, "highLight": false },
+    { "pos": { "x": 0, "y": 0 }, "show": false, "highLight": false },
+    { "pos": { "x": 0, "y": 0 }, "show": false, "highLight": false }
+  ],
   "shapes": [
     {
       "type": "line",
       "hanldeMargin": 10,
       "shapeMargin": 10,
       "handles": [
-        { "pos": { "x": 60, "y": 50 }, "show": false, "highLight": false },
-        { "pos": { "x": 90, "y": 50 }, "show": false, "highLight": false }
+        { "pos": { "x": 40, "y": 20 }, "show": false, "highLight": false },
+        { "pos": { "x": 60, "y": 20 }, "show": false, "highLight": false }
       ],
-      "start": { "x": 60, "y": 50 },
-      "end": { "x": 90, "y": 50 },
+      "start": { "x": 40, "y": 20 },
+      "end": { "x": 60, "y": 20 },
       "pen": { "strokeColor": "black", "fillColor": "", "width": 3, "dash": [] }
     },
     {
@@ -21,13 +25,13 @@
       "hanldeMargin": 10,
       "shapeMargin": 10,
       "handles": [
-        { "pos": { "x": 90, "y": 30 }, "show": false, "highLight": false },
-        { "pos": { "x": 200, "y": 70 }, "show": false, "highLight": false },
-        { "pos": { "x": 200, "y": 50 }, "show": false, "highLight": false }
+        { "pos": { "x": 60, "y": 10 }, "show": false, "highLight": false },
+        { "pos": { "x": 110, "y": 30 }, "show": false, "highLight": false },
+        { "pos": { "x": 110, "y": 20 }, "show": false, "highLight": false }
       ],
-      "center": { "x": 145, "y": 50 },
-      "width": 110,
-      "height": 40,
+      "center": { "x": 85, "y": 20 },
+      "width": 50,
+      "height": 20,
       "angle": 0,
       "pen": { "strokeColor": "black", "fillColor": "", "width": 3, "dash": [] }
     },
@@ -36,15 +40,15 @@
       "hanldeMargin": 10,
       "shapeMargin": 10,
       "handles": [
-        { "pos": { "x": 200, "y": 50 }, "show": false, "highLight": false },
-        { "pos": { "x": 230, "y": 50 }, "show": false, "highLight": false }
+        { "pos": { "x": 110, "y": 20 }, "show": false, "highLight": false },
+        { "pos": { "x": 130, "y": 20 }, "show": false, "highLight": false }
       ],
-      "start": { "x": 200, "y": 50 },
-      "end": { "x": 230, "y": 50 },
+      "start": { "x": 110, "y": 20 },
+      "end": { "x": 130, "y": 20 },
       "pen": { "strokeColor": "black", "fillColor": "", "width": 3, "dash": [] }
     }
   ],
-  "pivot": { "x": 145, "y": 50 },
+  "pivot": { "x": 85, "y": 20 },
   "center": { "x": 0, "y": 0 },
   "angle": 0
 }

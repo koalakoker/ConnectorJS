@@ -63,6 +63,9 @@ function handleShapeChange() {
   if (selectedValue === "poly") {
     factory = polyFact;
   }
+  if (selectedValue === "composition") {
+    factory = resFact;
+  }
   if (selectedValue === "select") {
     factory = new Select(scene);
   }
