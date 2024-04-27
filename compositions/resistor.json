@@ -1,0 +1,50 @@
+{
+  "type": "composition",
+  "hanldeMargin": 10,
+  "shapeMargin": 10,
+  "handles": [],
+  "shapes": [
+    {
+      "type": "line",
+      "hanldeMargin": 10,
+      "shapeMargin": 10,
+      "handles": [
+        { "pos": { "x": 60, "y": 50 }, "show": false, "highLight": false },
+        { "pos": { "x": 90, "y": 50 }, "show": false, "highLight": false }
+      ],
+      "start": { "x": 60, "y": 50 },
+      "end": { "x": 90, "y": 50 },
+      "pen": { "strokeColor": "black", "fillColor": "", "width": 3, "dash": [] }
+    },
+    {
+      "type": "rectangle",
+      "hanldeMargin": 10,
+      "shapeMargin": 10,
+      "handles": [
+        { "pos": { "x": 90, "y": 30 }, "show": false, "highLight": false },
+        { "pos": { "x": 200, "y": 70 }, "show": false, "highLight": false },
+        { "pos": { "x": 200, "y": 50 }, "show": false, "highLight": false }
+      ],
+      "center": { "x": 145, "y": 50 },
+      "width": 110,
+      "height": 40,
+      "angle": 0,
+      "pen": { "strokeColor": "black", "fillColor": "", "width": 3, "dash": [] }
+    },
+    {
+      "type": "line",
+      "hanldeMargin": 10,
+      "shapeMargin": 10,
+      "handles": [
+        { "pos": { "x": 200, "y": 50 }, "show": false, "highLight": false },
+        { "pos": { "x": 230, "y": 50 }, "show": false, "highLight": false }
+      ],
+      "start": { "x": 200, "y": 50 },
+      "end": { "x": 230, "y": 50 },
+      "pen": { "strokeColor": "black", "fillColor": "", "width": 3, "dash": [] }
+    }
+  ],
+  "pivot": { "x": 145, "y": 50 },
+  "center": { "x": 0, "y": 0 },
+  "angle": 0
+}

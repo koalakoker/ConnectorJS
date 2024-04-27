@@ -43,3 +43,38 @@ document.addEventListener("wheel", wheel);
 document.addEventListener("keypress", keypress);
 
 const txt = document.getElementById("txt");
+
+function handleShapeChange() {
+  var selectElement = document.getElementById("shape-select");
+  var selectedValue = selectElement.value;
+
+  if (selectedValue === "line") {
+    factory = lineFact;
+  }
+  if (selectedValue === "circle") {
+    factory = circleFact;
+  }
+  if (selectedValue === "arc") {
+    factory = arcFact;
+  }
+  if (selectedValue === "rect") {
+    factory = rectFact;
+  }
+  if (selectedValue === "poly") {
+    factory = polyFact;
+  }
+  if (selectedValue === "select") {
+    factory = new Select(scene);
+  }
+}
+
+// window.onload = function () {
+//   fetch("Scene.json")
+//     .then((response) => response.json())
+//     .then((data) => {
+//       const jsonString = JSON.stringify(data, null, 2);
+//       document.getElementById("txt").value = jsonString;
+//       scene = JSON.parse(jsonString, reviveScene);
+//     })
+//     .catch((error) => console.error("Error loading JSON file:", error));
+// };
