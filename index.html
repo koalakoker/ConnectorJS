@@ -9,17 +9,24 @@
   <body>
     <canvas id="canvas" width="400" height="400"></canvas>
     <textarea id="txt" cols="50" rows="30">Hello</textarea>
-    <select id="shape-select" onchange="handleShapeChange()">
-      <option value="line">Line</option>
-      <option value="circle">Circle</option>
-      <option value="arc">Arc</option>
-      <option value="rect">Rect</option>
-      <option value="poly">Poly</option>
-      <option value="composition">Composition</option>
-      <option value="select">Select</option>
-    </select>
-    <button onclick="reset()">Reset</button>
-    <button onclick="load()">Load</button>
+    <div>
+      <select id="shape-select" onchange="handleShapeChange()">
+        <option value="line">Line</option>
+        <option value="circle">Circle</option>
+        <option value="arc">Arc</option>
+        <option value="rect">Rect</option>
+        <option value="poly">Poly</option>
+        <option value="composition">Composition</option>
+        <option value="select">Select</option></select
+      ><br />
+      <select id="compSelect" onchange="handleCompChange()">
+        <option value="compositions/resistor.json">Resistor</option>
+        <option value="compositions/cap.json">Cap</option>
+        <option value="compositions/draw.json">Draw</option></select
+      ><br />
+      <button onclick="reset()">Reset</button>
+      <button onclick="load()">Load</button>
+    </div>
 
     <script src="lib/graphics/pen.js"></script>
     <script src="lib/graphics/point.js"></script>
@@ -42,7 +49,7 @@
     <script src="lib/factories/arcFact.js"></script>
     <script src="lib/factories/rectFact.js"></script>
     <script src="lib/factories/polyFact.js"></script>
-    <script src="lib/factories/resFact.js"></script>
+    <script src="lib/factories/compFact.js"></script>
     <script src="lib/factories/select.js"></script>
 
     <script src="test/shapes.js"></script>

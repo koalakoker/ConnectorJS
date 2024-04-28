@@ -71,6 +71,12 @@ function handleShapeChange() {
   }
 }
 
+function handleCompChange() {
+  var selectElement = document.getElementById("compSelect");
+  var selectedValue = selectElement.value;
+  resFact.pathJSON = selectedValue;
+}
+
 // window.onload = function () {
 //   fetch("Scene.json")
 //     .then((response) => response.json())

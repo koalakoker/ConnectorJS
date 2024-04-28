@@ -18,7 +18,7 @@ const polyFact = new PolyFact((s) => {
   scene.addShape(s);
   txt.value = JSON.stringify(scene);
 });
-const resFact = new ResFact((s) => {
+const resFact = new CompFact("compositions/resistor.json", (s) => {
   scene.addShape(s);
   txt.value = JSON.stringify(scene);
 });

@@ -1,0 +1,63 @@
+{
+  "type": "composition",
+  "hanldeMargin": 10,
+  "shapeMargin": 10,
+  "handles": [
+    { "pos": { "x": 0, "y": 0 }, "show": false, "highLight": false },
+    { "pos": { "x": 0, "y": 0 }, "show": false, "highLight": false },
+    { "pos": { "x": 0, "y": 0 }, "show": false, "highLight": false }
+  ],
+  "shapes": [
+    {
+      "type": "line",
+      "hanldeMargin": 10,
+      "shapeMargin": 10,
+      "handles": [
+        { "pos": { "x": 20, "y": 40 }, "show": false, "highLight": false },
+        { "pos": { "x": 50, "y": 40 }, "show": false, "highLight": false }
+      ],
+      "start": { "x": 20, "y": 40 },
+      "end": { "x": 50, "y": 40 },
+      "pen": { "strokeColor": "black", "fillColor": "", "width": 3, "dash": [] }
+    },
+    {
+      "type": "line",
+      "hanldeMargin": 10,
+      "shapeMargin": 10,
+      "handles": [
+        { "pos": { "x": 50, "y": 20 }, "show": false, "highLight": false },
+        { "pos": { "x": 50, "y": 60 }, "show": false, "highLight": false }
+      ],
+      "start": { "x": 50, "y": 20 },
+      "end": { "x": 50, "y": 60 },
+      "pen": { "strokeColor": "black", "fillColor": "", "width": 3, "dash": [] }
+    },
+    {
+      "type": "line",
+      "hanldeMargin": 10,
+      "shapeMargin": 10,
+      "handles": [
+        { "pos": { "x": 60, "y": 20 }, "show": false, "highLight": false },
+        { "pos": { "x": 60, "y": 60 }, "show": false, "highLight": false }
+      ],
+      "start": { "x": 60, "y": 20 },
+      "end": { "x": 60, "y": 60 },
+      "pen": { "strokeColor": "black", "fillColor": "", "width": 3, "dash": [] }
+    },
+    {
+      "type": "line",
+      "hanldeMargin": 10,
+      "shapeMargin": 10,
+      "handles": [
+        { "pos": { "x": 60, "y": 40 }, "show": false, "highLight": false },
+        { "pos": { "x": 90, "y": 40 }, "show": false, "highLight": false }
+      ],
+      "start": { "x": 60, "y": 40 },
+      "end": { "x": 90, "y": 40 },
+      "pen": { "strokeColor": "black", "fillColor": "", "width": 3, "dash": [] }
+    }
+  ],
+  "pivot": { "x": 55, "y": 40 },
+  "center": { "x": 0, "y": 0 },
+  "angle": 0
+}
