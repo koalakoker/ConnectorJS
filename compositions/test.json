@@ -1,0 +1,47 @@
+{
+  "type": "composition",
+  "hanldeMargin": 10,
+  "shapeMargin": 10,
+  "handles": [
+    { "pos": { "x": 0, "y": 0 }, "show": false, "highLight": false },
+    { "pos": { "x": 0, "y": 0 }, "show": false, "highLight": false },
+    { "pos": { "x": 0, "y": 0 }, "show": false, "highLight": false }
+  ],
+  "shapes": [
+    {
+      "type": "line",
+      "hanldeMargin": 10,
+      "shapeMargin": 10,
+      "handles": [
+        { "pos": { "x": 90, "y": 310 }, "show": false, "highLight": false },
+        { "pos": { "x": 220, "y": 190 }, "show": false, "highLight": false }
+      ],
+      "start": { "x": 90, "y": 310 },
+      "end": { "x": 220, "y": 190 },
+      "pen": { "strokeColor": "black", "fillColor": "", "width": 3, "dash": [] }
+    },
+    {
+      "type": "line",
+      "hanldeMargin": 10,
+      "shapeMargin": 10,
+      "handles": [
+        { "pos": { "x": 320, "y": 310 }, "show": false, "highLight": false },
+        { "pos": { "x": 100, "y": 200 }, "show": false, "highLight": false }
+      ],
+      "start": { "x": 320, "y": 310 },
+      "end": { "x": 100, "y": 200 }
+    },
+    {
+      "type": "line",
+      "hanldeMargin": 10,
+      "shapeMargin": 10,
+      "handles": [
+        { "pos": { "x": 190, "y": 330 }, "show": false, "highLight": false },
+        { "pos": { "x": 160, "y": 180 }, "show": false, "highLight": false }
+      ],
+      "start": { "x": 190, "y": 330 },
+      "end": { "x": 160, "y": 180 }
+    }
+  ],
+  "angle": 0
+}

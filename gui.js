@@ -75,6 +75,9 @@ function handleCompChange() {
   var selectElement = document.getElementById("compSelect");
   var selectedValue = selectElement.value;
   resFact.pathJSON = selectedValue;
+  const shapeSelect = document.getElementById("shape-select");
+  shapeSelect.value = "composition";
+  shapeSelect.dispatchEvent(new Event("change"));
 }
 
 // window.onload = function () {

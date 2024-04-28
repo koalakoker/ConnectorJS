@@ -1,24 +1,14 @@
-const lineFact = new LineFact((s) => {
+function newShape(s) {
   scene.addShape(s);
-  txt.value = JSON.stringify(scene);
-});
-const circleFact = new CircleFact((s) => {
-  scene.addShape(s);
-  txt.value = JSON.stringify(scene);
-});
-const arcFact = new ArcFact((s) => {
-  scene.addShape(s);
-  txt.value = JSON.stringify(scene);
-});
-const rectFact = new RectFact((s) => {
-  scene.addShape(s);
-  txt.value = JSON.stringify(scene);
-});
-const polyFact = new PolyFact((s) => {
-  scene.addShape(s);
-  txt.value = JSON.stringify(scene);
-});
-const resFact = new CompFact("compositions/resistor.json", (s) => {
-  scene.addShape(s);
-  txt.value = JSON.stringify(scene);
-});
+  txt.value = JSON.stringify(scene, (key, value) => {
+    if (key === "parent") return;
+    return value;
+  });
+}
+
+const lineFact = new LineFact(newShape);
+const circleFact = new CircleFact(newShape);
+const arcFact = new ArcFact(newShape);
+const rectFact = new RectFact(newShape);
+const polyFact = new PolyFact(newShape);
+const resFact = new CompFact("compositions/resistor.json", newShape);
