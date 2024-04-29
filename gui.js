@@ -89,7 +89,7 @@ function handleShapeChange() {
     factory = resFact;
   }
   if (selectedValue === "select") {
-    factory = new Select();
+    factory = selectFact;
   }
 }
 
