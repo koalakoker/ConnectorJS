@@ -27,3 +27,7 @@ function reviveScene(key, value) {
 
   return value;
 }
+
+function serialize(key, value) {
+  if (Shape.serialize(key, value)) return value;
+}

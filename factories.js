@@ -1,9 +1,6 @@
 function newShape(s) {
   scene.addShape(s);
-  txt.value = JSON.stringify(scene, (key, value) => {
-    if (key === "parent") return;
-    return value;
-  });
+  txt.value = JSON.stringify(scene, serialize);
 }
 
 const lineFact = new LineFact(newShape);
