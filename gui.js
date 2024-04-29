@@ -41,6 +41,16 @@ document.addEventListener("mousemove", mouseMove);
 document.addEventListener("mouseup", mouseUp);
 document.addEventListener("wheel", wheel);
 document.addEventListener("keypress", keypress);
+document.addEventListener("keydown", (e) => {
+  if (e.key === "ArrowRight") {
+    console.log("Call draw");
+    draw();
+  }
+  if (e.key === "ArrowLeft") {
+    console.log("Time freeze");
+    clearInterval(intervalID);
+  }
+});
 
 const txt = document.getElementById("txt");
 
