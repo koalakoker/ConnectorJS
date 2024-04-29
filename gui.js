@@ -10,7 +10,7 @@ function getPosOnCanvas(p) {
 
 function mouseDown(e) {
   let p = getPosOnCanvas(new Point(e.x, e.y));
-  factory.mouseDown(p, "shift");
+  factory.mouseDown(p, modifier);
 }
 
 function mouseMove(e) {
@@ -50,6 +50,18 @@ document.addEventListener("keydown", (e) => {
     console.log("Time freeze");
     clearInterval(intervalID);
   }
+  if (e.key === "Escape") {
+    scene.deselectAll();
+  }
+  if (e.key === "Shift") {
+    modifier = "shift";
+  }
+});
+
+document.addEventListener("keyup", (e) => {
+  if (e.key === "Shift") {
+    modifier = "";
+  }
 });
 
 const txt = document.getElementById("txt");
@@ -77,7 +89,7 @@ function handleShapeChange() {
     factory = resFact;
   }
   if (selectedValue === "select") {
-    factory = new Select(scene);
+    factory = new Select();
   }
 }
 
