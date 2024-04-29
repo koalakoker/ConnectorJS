@@ -10,7 +10,7 @@ function getPosOnCanvas(p) {
 
 function mouseDown(e) {
   let p = getPosOnCanvas(new Point(e.x, e.y));
-  factory.mouseDown(p);
+  factory.mouseDown(p, "shift");
 }
 
 function mouseMove(e) {
