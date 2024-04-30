@@ -63,6 +63,12 @@ function keydown(e) {
   if (e.key === "Alt") {
     mAlt = true;
   }
+  if (e.code === "KeyP" && mAlt) {
+    factory.event("setPivot");
+  }
+  if (e.code === "Escape") {
+    factory.event("escape");
+  }
   if (e.code === "KeyC" && mControl) {
     e.preventDefault();
     factory.event("copy");
