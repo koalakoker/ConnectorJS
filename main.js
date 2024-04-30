@@ -3,7 +3,6 @@ const fps = 60;
 const dt = 1 / fps;
 const intervalID = setInterval(draw, 1000 / fps);
 
-let modifier = "";
 let scene = new Composition();
 let factory = lineFact;
 

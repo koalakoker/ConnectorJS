@@ -8,6 +8,11 @@ function getPosOnCanvas(p) {
   return pt;
 }
 
+let modifier = "";
+let mControl = false;
+let mShift = false;
+let mAlt = false;
+
 function mouseDown(e) {
   let p = getPosOnCanvas(new Point(e.x, e.y));
   factory.mouseDown(p, modifier);
@@ -36,12 +41,7 @@ function keypress(e) {
   }
 }
 
-document.addEventListener("mousedown", mouseDown);
-document.addEventListener("mousemove", mouseMove);
-document.addEventListener("mouseup", mouseUp);
-document.addEventListener("wheel", wheel);
-document.addEventListener("keypress", keypress);
-document.addEventListener("keydown", (e) => {
+function keydown(e) {
   if (e.key === "ArrowRight") {
     console.log("Call draw");
     draw();
@@ -53,16 +53,47 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
     scene.deselectAll();
   }
+  if (e.key === "Control") {
+    mControl = true;
+  }
   if (e.key === "Shift") {
     modifier = "shift";
+    mShift = true;
   }
-});
+  if (e.key === "Alt") {
+    mAlt = true;
+  }
+  if (e.code === "KeyC" && mControl) {
+    factory.event("copy");
+  }
+  if (e.code === "KeyV" && mControl) {
+    factory.event("paste");
+  }
+  if (e.code === "Delete") {
+    factory.event("canc");
+  }
+}
 
-document.addEventListener("keyup", (e) => {
+function keyup(e) {
+  if (e.key === "Control") {
+    mControl = false;
+  }
   if (e.key === "Shift") {
     modifier = "";
+    mShift = false;
   }
-});
+  if (e.key === "Alt") {
+    mAlt = false;
+  }
+}
+
+document.addEventListener("mousedown", mouseDown);
+document.addEventListener("mousemove", mouseMove);
+document.addEventListener("mouseup", mouseUp);
+document.addEventListener("wheel", wheel);
+document.addEventListener("keypress", keypress);
+document.addEventListener("keydown", keydown);
+document.addEventListener("keyup", keyup);
 
 const txt = document.getElementById("txt");
 
