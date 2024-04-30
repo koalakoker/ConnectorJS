@@ -51,9 +51,9 @@ function keydown(e) {
     clearInterval(intervalID);
   }
   if (e.key === "Escape") {
-    scene.deselectAll();
+    factory.event("deselect");
   }
-  if (e.key === "Control") {
+  if (e.key === "Control" || e.code === "MetaLeft" || e.code === "MetaRight") {
     mControl = true;
   }
   if (e.key === "Shift") {
@@ -64,18 +64,20 @@ function keydown(e) {
     mAlt = true;
   }
   if (e.code === "KeyC" && mControl) {
+    e.preventDefault();
     factory.event("copy");
   }
   if (e.code === "KeyV" && mControl) {
     factory.event("paste");
   }
-  if (e.code === "Delete") {
+  if (e.code === "Delete" || e.code === "Backspace") {
     factory.event("canc");
   }
+  //console.log(e.code);
 }
 
 function keyup(e) {
-  if (e.key === "Control") {
+  if (e.key === "Control" || e.code === "MetaLeft" || e.code === "MetaRight") {
     mControl = false;
   }
   if (e.key === "Shift") {
