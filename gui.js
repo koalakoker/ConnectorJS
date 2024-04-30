@@ -151,3 +151,10 @@ function handleCompChange() {
 //     })
 //     .catch((error) => console.error("Error loading JSON file:", error));
 // };
+
+const strokeColor = document.getElementById("strokeColor");
+strokeColor.addEventListener("input", (e) => {
+  const selectedColor = e.target.value;
+  //console.log("New color selected:", selectedColor);
+  setCurrentPen(new Pen(selectedColor));
+});
