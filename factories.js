@@ -1,6 +1,7 @@
 function newShape(s) {
   scene.addShape(s);
-  txt.value = JSON.stringify(scene, serialize);
+  const jsonTxt = JSON.stringify(scene, serialize, 2);
+  txt.value = jsonTxt;
 }
 
 function updateScene() {
