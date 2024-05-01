@@ -155,6 +155,10 @@ function handleCompChange() {
 const strokeColor = document.getElementById("strokeColor");
 strokeColor.addEventListener("input", (e) => {
   const selectedColor = e.target.value;
-  //console.log("New color selected:", selectedColor);
   setCurrentPen(new Pen(selectedColor));
+});
+const fillColor = document.getElementById("fillColor");
+fillColor.addEventListener("input", (e) => {
+  const selectedColor = e.target.value;
+  setCurrentPen(new Pen("", selectedColor));
 });
