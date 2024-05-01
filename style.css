@@ -18,3 +18,19 @@ html {
 #strokeSize {
   width: 2.5em;
 }
+
+.container {
+  position: relative;
+}
+
+.textarea {
+  width: 400px;
+  height: 150px;
+  resize: none;
+}
+
+.button-inside {
+  position: absolute;
+  top: 0px;
+  right: 15px;
+}

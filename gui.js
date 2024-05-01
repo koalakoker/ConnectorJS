@@ -128,6 +128,15 @@ document.addEventListener("keydown", keydown);
 document.addEventListener("keyup", keyup);
 
 const txt = document.getElementById("txt");
+function txtToggleVisibility() {
+  if (txt.style.display === "") {
+    txt.style.display = "none";
+    document.getElementById("txtToggleVisibility").value = ">";
+  } else {
+    txt.style.display = "";
+    document.getElementById("txtToggleVisibility").value = "x";
+  }
+}
 
 function handleShapeChange() {
   var selectElement = document.getElementById("shape-select");

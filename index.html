@@ -36,17 +36,18 @@
             <option value="compositions/draw.json">Draw</option>
             <option value="compositions/rect.json">Rect</option>
           </select>
-          <br />
           <button onclick="reset()">Reset</button>
           <button onclick="load()">Load</button>
         </td>
       </tr>
       <tr>
         <td>
-          <textarea id="txt" cols="50" rows="10"></textarea>
+          <div class="container">
+            <textarea class="textarea" id="txt" cols="50" rows="10"></textarea>
+            <input class="button-inside" type="button" id="txtToggleVisibility" value="x" onclick="txtToggleVisibility()">></input>  
+          </div>
         </td>
         </tr>
-        
       </tr>
     </table>
     <script src="lib/graphics/pen.js"></script>
