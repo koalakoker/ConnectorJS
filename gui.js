@@ -95,7 +95,6 @@ function keydown(e) {
     factory.event("setPivot");
   }
   if (e.code === "KeyC" && mControl) {
-    e.preventDefault();
     factory.event("copy");
   }
   if (e.code === "KeyV" && mControl) {
