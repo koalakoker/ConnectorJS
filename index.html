@@ -22,12 +22,11 @@
             <option value="rect">Rect</option>
             <option value="poly">Poly</option>
             <option value="composition">Composition</option>
-            <option value="select">Select</option></select
-          ><input type="color" id="strokeColor" value="transparent" /><input
-            type="color"
-            id="fillColor"
-            value="transparent"
-          /><input type="number" id="strokeSize" value="3" size="1" />
+            <option value="select">Select</option>
+          </select>
+          <input type="color" id="strokeColor" />
+          <input type="color" id="fillColor" />
+          <input type="number" id="strokeSize" value="3" size="1" />
           <input type="text" id="strokeDash" value="[]" size="5" />
           <br />
           <select id="compSelect" onchange="handleCompChange()">
@@ -35,8 +34,9 @@
             <option value="compositions/res2.json">Resistor 2</option>
             <option value="compositions/cap.json">Cap</option>
             <option value="compositions/draw.json">Draw</option>
-            <option value="compositions/rect.json">Rect</option></select
-          ><br />
+            <option value="compositions/rect.json">Rect</option>
+          </select>
+          <br />
           <button onclick="reset()">Reset</button>
           <button onclick="load()">Load</button>
         </td>
