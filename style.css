@@ -14,3 +14,7 @@ html {
 #canvas {
   background-color: white;
 }
+
+#strokeSize {
+  width: 2.5em;
+}

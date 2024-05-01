@@ -41,17 +41,45 @@ function keypress(e) {
   }
 }
 
+function noModifier() {
+  return mControl === false && mAlt === false && mShift === false;
+}
+
 function keydown(e) {
-  if (e.key === "ArrowRight") {
-    console.log("Call draw");
-    draw();
+  // if (e.key === "ArrowRight") {
+  //   console.log("Call draw");
+  //   draw();
+  // }
+  // if (e.key === "ArrowLeft") {
+  //   console.log("Time freeze");
+  //   clearInterval(intervalID);
+  // }
+  if (e.code === "KeyL" && noModifier()) {
+    setMode("line");
+    e.preventDefault();
   }
-  if (e.key === "ArrowLeft") {
-    console.log("Time freeze");
-    clearInterval(intervalID);
+  if (e.code === "KeyC" && noModifier()) {
+    setMode("circle");
+    e.preventDefault();
+  }
+  if (e.code === "KeyA" && noModifier()) {
+    setMode("arc");
+    e.preventDefault();
+  }
+  if (e.code === "KeyR" && noModifier()) {
+    setMode("rect");
+    e.preventDefault();
+  }
+  if (e.code === "KeyP" && noModifier()) {
+    setMode("poly");
+    e.preventDefault();
   }
   if (e.key === "Escape") {
+    if (factory !== selectFact) {
+      setMode("select");
+    }
     factory.event("deselect");
+    factory.event("escape");
   }
   if (e.key === "Control" || e.code === "MetaLeft" || e.code === "MetaRight") {
     mControl = true;
@@ -65,9 +93,6 @@ function keydown(e) {
   }
   if (e.code === "KeyP" && mAlt) {
     factory.event("setPivot");
-  }
-  if (e.code === "Escape") {
-    factory.event("escape");
   }
   if (e.code === "KeyC" && mControl) {
     e.preventDefault();
@@ -132,13 +157,17 @@ function handleShapeChange() {
   }
 }
 
+function setMode(mode) {
+  const shapeSelect = document.getElementById("shape-select");
+  shapeSelect.value = mode;
+  shapeSelect.dispatchEvent(new Event("change"));
+}
+
 function handleCompChange() {
   var selectElement = document.getElementById("compSelect");
   var selectedValue = selectElement.value;
   resFact.pathJSON = selectedValue;
-  const shapeSelect = document.getElementById("shape-select");
-  shapeSelect.value = "composition";
-  shapeSelect.dispatchEvent(new Event("change"));
+  setMode("composition");
 }
 
 // window.onload = function () {
@@ -152,13 +181,36 @@ function handleCompChange() {
 //     .catch((error) => console.error("Error loading JSON file:", error));
 // };
 
+function isNumber(value) {
+  return typeof value === "number" && !isNaN(value);
+}
+
+function isArray(value) {
+  return Array.isArray(value);
+}
+
+function createPenFromGui() {
+  const sc = strokeColor.value;
+  const fc = fillColor.value;
+  let ss = parseInt(strokeSize.value);
+  let sd = strokeDash.value;
+
+  if (!isNumber(ss)) return;
+  if (ss < 0 || ss > 100) return;
+  ss = Math.round(ss);
+
+  sd = JSON.parse(sd);
+  if (!isArray(sd)) return;
+
+  setCurrentPen(new Pen(sc, fc, ss, sd));
+  console.log("Set new pen", sc, fc, ss, sd);
+}
+
 const strokeColor = document.getElementById("strokeColor");
-strokeColor.addEventListener("input", (e) => {
-  const selectedColor = e.target.value;
-  setCurrentPen(new Pen(selectedColor));
-});
+strokeColor.addEventListener("input", createPenFromGui);
 const fillColor = document.getElementById("fillColor");
-fillColor.addEventListener("input", (e) => {
-  const selectedColor = e.target.value;
-  setCurrentPen(new Pen("", selectedColor));
-});
+fillColor.addEventListener("input", createPenFromGui);
+const strokeSize = document.getElementById("strokeSize");
+strokeSize.addEventListener("input", createPenFromGui);
+const strokeDash = document.getElementById("strokeDash");
+strokeDash.addEventListener("input", createPenFromGui);
