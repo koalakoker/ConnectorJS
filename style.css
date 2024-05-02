@@ -23,6 +23,35 @@ html {
   position: relative;
 }
 
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.section {
+  margin: 0; /* Reset margin to zero */
+  padding: 0; /* Reset padding to zero */
+  box-sizing: border-box;
+  border: none;
+}
+
+.canvas {
+  height: 405px;
+  padding-bottom: 5px;
+}
+
+.tools {
+  height: 30px;
+  padding: 5px;
+}
+
+.toolElement {
+  vertical-align: top;
+}
+
 .textarea {
   width: 400px;
   height: 150px;

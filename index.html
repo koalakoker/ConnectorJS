@@ -7,49 +7,42 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <table>
-      <tr>
-        <td>
-          <canvas id="canvas" width="400" height="400"></canvas>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <select id="shape-select" onchange="handleShapeChange()">
-            <option value="line">Line</option>
-            <option value="circle">Circle</option>
-            <option value="arc">Arc</option>
-            <option value="rect">Rect</option>
-            <option value="poly">Poly</option>
-            <option value="composition">Composition</option>
-            <option value="select">Select</option>
-          </select>
-          <input type="color" id="strokeColor" />
-          <input type="color" id="fillColor" />
-          <input type="number" id="strokeSize" value="3" size="1" />
-          <input type="text" id="strokeDash" value="[]" size="5" />
-          <br />
-          <select id="compSelect" onchange="handleCompChange()">
-            <option value="compositions/resistor.json">Resistor</option>
-            <option value="compositions/res2.json">Resistor 2</option>
-            <option value="compositions/cap.json">Cap</option>
-            <option value="compositions/draw.json">Draw</option>
-            <option value="compositions/rect.json">Rect</option>
-          </select>
-          <button onclick="reset()">Reset</button>
-          <button onclick="load()">Load</button>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <div class="container">
-            <textarea class="textarea" id="txt" cols="50" rows="10"></textarea>
-            <input class="button-inside" type="button" id="txtToggleVisibility" value="x" onclick="txtToggleVisibility()">></input>  
-          </div>
-        </td>
-        </tr>
-      </tr>
-    </table>
+    <div class="mainContainer">
+      
+      <div class="section tools">
+        <select class="toolElement" id="shape-select" onchange="handleShapeChange()">
+          <option value="line">Line</option>
+          <option value="circle">Circle</option>
+          <option value="arc">Arc</option>
+          <option value="rect">Rect</option>
+          <option value="poly">Poly</option>
+          <option value="composition">Composition</option>
+          <option value="select">Select</option>
+        </select>
+        <input class="toolElement" type="color" id="strokeColor" />
+        <input class="toolElement" type="color" id="fillColor" />
+        <input class="toolElement" type="number" id="strokeSize" value="3" size="1" />
+        <input type="text" id="strokeDash" value="[]" size="5" />
+        <select class="toolElement" id="compSelect" onchange="handleCompChange()">
+          <option value="compositions/resistor.json">Resistor</option>
+          <option value="compositions/res2.json">Resistor 2</option>
+          <option value="compositions/cap.json">Cap</option>
+          <option value="compositions/draw.json">Draw</option>
+          <option value="compositions/rect.json">Rect</option>
+        </select>
+        <button class="toolElement" onclick="reset()">Reset</button>
+        <button class="toolElement" onclick="load()">Load</button>
+      </div>
+      
+      <div class="section canvas">
+        <canvas id="canvas" width="800" height="400"></canvas>
+      </div>
+
+      <div class="container">
+        <textarea class="textarea" id="txt" cols="50" rows="10"></textarea>
+        <input class="button-inside" type="button" id="txtToggleVisibility" value="x" onclick="txtToggleVisibility()">></input>  
+      </div>
+    </div>    
     <script src="lib/graphics/pen.js"></script>
     <script src="lib/graphics/point.js"></script>
     <script src="lib/graphics/grid.js"></script>
