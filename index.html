@@ -38,10 +38,17 @@
         <canvas id="canvas" width="800" height="400"></canvas>
       </div>
 
-      <div class="container">
-        <textarea class="textarea" id="txt" cols="50" rows="10"></textarea>
-        <input class="button-inside" type="button" id="txtToggleVisibility" value="x" onclick="txtToggleVisibility()">></input>  
+      <div class="sectionRow">
+        <div class="container">
+          <textarea class="textarea" id="txt" cols="50" rows="10"></textarea>
+          <input class="button-inside" type="button" id="txtToggleVisibility" value="x" onclick="txtToggleVisibility()"></input>  
+        </div>
+        <div class="container">
+          <div class="info">Properties</div>
+          <input class="button-inside" type="button" id="infoToggleVisibility" value="x" onclick="infoToggleVisibility()"></input>  
+        </div>
       </div>
+      
     </div>    
     <script src="lib/graphics/pen.js"></script>
     <script src="lib/graphics/point.js"></script>
