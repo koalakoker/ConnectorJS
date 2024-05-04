@@ -73,12 +73,23 @@ html {
 .info {
   flex-direction: row;
   width: 360px;
-  height: 150px;
+  height: 144px;
   color: aquamarine;
   border: 1px solid #ccc;
   text-align: left;
+  padding: 5px;
 }
 
 .row {
-  flex-direction: column;
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(3, 41, 29);
+}
+
+.colElem {
+  padding: 3px;
+}
+
+input[type="number"] {
+  width: 40px;
 }

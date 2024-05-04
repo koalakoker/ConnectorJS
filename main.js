@@ -21,16 +21,3 @@ function load() {
   const jsonString = txt.value;
   scene = JSON.parse(jsonString, reviveScene);
 }
-
-function updateProperties(selectedObject) {
-  var propertiesContainer = document.getElementById("propertiesContainer");
-  propertiesContainer.innerHTML = ""; // Clear previous properties
-
-  // Dynamically load HTML content for selected object
-  fetch(`properties/object_${selectedObject}.html`)
-    .then((response) => response.text())
-    .then((html) => {
-      propertiesContainer.innerHTML = html;
-    })
-    .catch((error) => console.error("Error fetching object HTML:", error));
-}
