@@ -71,9 +71,14 @@ html {
 }
 
 .info {
+  flex-direction: row;
   width: 360px;
   height: 150px;
   color: aquamarine;
   border: 1px solid #ccc;
   text-align: left;
+}
+
+.row {
+  flex-direction: column;
 }
