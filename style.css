@@ -74,7 +74,7 @@ html {
   flex-direction: row;
   width: 360px;
   height: 144px;
-  color: aquamarine;
+  color: white;
   border: 1px solid #ccc;
   text-align: left;
   padding: 5px;
@@ -83,7 +83,6 @@ html {
 .row {
   display: flex;
   flex-direction: row;
-  background-color: rgb(3, 41, 29);
 }
 
 .colElem {

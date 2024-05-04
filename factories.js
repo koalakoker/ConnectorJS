@@ -1,17 +1,14 @@
-function newShape(s) {
-  scene.addShape(s);
-  const jsonTxt = JSON.stringify(scene, serialize, 2);
-  txt.value = jsonTxt;
+function updateScene(s) {
+  if (s instanceof Shape) {
+    scene.addShape(s);
+  }
+  txt.value = JSON.stringify(scene, serialize, 2);
 }
 
-function updateScene() {
-  txt.value = JSON.stringify(scene, serialize);
-}
-
-const lineFact = new LineFact(newShape);
-const circleFact = new CircleFact(newShape);
-const arcFact = new ArcFact(newShape);
-const rectFact = new RectFact(newShape);
-const polyFact = new PolyFact(newShape);
-const resFact = new CompFact("compositions/resistor.json", newShape);
+const lineFact = new LineFact(updateScene);
+const circleFact = new CircleFact(updateScene);
+const arcFact = new ArcFact(updateScene);
+const rectFact = new RectFact(updateScene);
+const polyFact = new PolyFact(updateScene);
+const resFact = new CompFact("compositions/resistor.json", updateScene);
 const selectFact = new Select(updateScene);
