@@ -104,7 +104,7 @@ function keydown(e) {
   if (e.code === "Delete" || e.code === "Backspace") {
     factory.event("canc");
   }
-  console.log(e.code);
+  //console.log(e.code);
 }
 
 function keyup(e) {
