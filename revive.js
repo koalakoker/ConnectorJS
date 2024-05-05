@@ -29,5 +29,8 @@ function reviveScene(key, value) {
 }
 
 function serialize(key, value) {
-  if (Shape.serialize(key, value)) return value;
+  let toBeSerialized = true;
+  toBeSerialized &= Shape.serialize(key, value);
+  toBeSerialized &= Composition.serialize(key, value);
+  if (toBeSerialized) return value;
 }
