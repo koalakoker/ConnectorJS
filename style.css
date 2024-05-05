@@ -89,6 +89,17 @@ html {
   padding: 3px;
 }
 
+.itemElem {
+  color: aqua;
+  text-decoration: underline;
+}
+
+.itemElem:hover {
+  color: aliceblue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 input[type="number"] {
   width: 40px;
 }
