@@ -5,6 +5,7 @@ const intervalID = setInterval(draw, 1000 / fps);
 
 let scene = new Composition();
 let factory = lineFact;
+let inputManager = new InputManager();
 
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
