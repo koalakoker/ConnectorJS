@@ -15,6 +15,7 @@ let mAlt = false;
 
 function mouseDown(e) {
   let p = getPosOnCanvas(new Point(e.x, e.y));
+  if (!isInCanvas(p)) return;
   factory.mouseDown(p, modifier);
 }
 
@@ -103,7 +104,7 @@ function keydown(e) {
   if (e.code === "Delete" || e.code === "Backspace") {
     factory.event("canc");
   }
-  //console.log(e.code);
+  console.log(e.code);
 }
 
 function keyup(e) {
