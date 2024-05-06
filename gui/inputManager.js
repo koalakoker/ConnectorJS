@@ -1,5 +1,7 @@
 class InputManager {
-  constructor() {}
+  constructor() {
+    this.minMouseDeltaPixel = 10;
+  }
   addInputListener(shape) {
     this.shape = shape;
     shape.propertiesContainer
@@ -7,6 +9,15 @@ class InputManager {
       .forEach((input) => {
         input.addEventListener("change", (e) => {
           this.valueChanged(e.target.id, parseInt(e.target.value));
+        });
+        input.addEventListener("mousedown", (e) => {
+          this.mouseDown(e.target);
+        });
+        document.addEventListener("mousemove", (e) => {
+          this.mouseMove();
+        });
+        document.addEventListener("mouseup", (e) => {
+          this.mouseUp();
         });
       });
   }
@@ -30,5 +41,25 @@ class InputManager {
     } catch (error) {
       console.log(error);
     }
+  }
+  mouseDown(e) {
+    this.mouseIsDown = true;
+    this.lastY = mouse.y;
+    this.targetId = e.id;
+    this.tagetValue = parseInt(e.value);
+  }
+  mouseMove() {
+    if (this.mouseIsDown === true) {
+      const dY = Math.sign(mouse.y - this.lastY) * this.minMouseDeltaPixel;
+      if (dY !== 0) {
+        const value = parseInt(this.tagetValue);
+        this.valueChanged(this.targetId, value + dY);
+        this.lastY = mouse.y;
+        this.tagetValue = value + dY;
+      }
+    }
+  }
+  mouseUp() {
+    this.mouseIsDown = false;
   }
 }

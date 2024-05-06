@@ -15,25 +15,27 @@ let mAlt = false;
 let mouse = new Point(0, 0);
 
 function mouseDown(e) {
-  let p = getPosOnCanvas(new Point(e.x, e.y));
-  if (!isInCanvas(p)) return;
-  factory.mouseDown(p, modifier);
   mouse.x = e.x;
   mouse.y = e.y;
+  const p = getPosOnCanvas(mouse);
+  if (!isInCanvas(p)) return;
+  factory.mouseDown(p, modifier);
 }
 
 function mouseMove(e) {
-  let p = getPosOnCanvas(new Point(e.x, e.y));
-  factory.mouseMove(p);
   mouse.x = e.x;
   mouse.y = e.y;
+  const p = getPosOnCanvas(mouse);
+  if (!isInCanvas(p)) return;
+  factory.mouseMove(p);
 }
 
 function mouseUp(e) {
-  let p = getPosOnCanvas(new Point(e.x, e.y));
-  factory.mouseUp(p);
   mouse.x = e.x;
   mouse.y = e.y;
+  const p = getPosOnCanvas(mouse);
+  if (!isInCanvas(p)) return;
+  factory.mouseUp(p);
 }
 
 function wheel(e) {
@@ -103,17 +105,17 @@ function keydown(e) {
     factory.event("setPivot");
   }
   if (e.code === "KeyC" && mControl) {
-    if (isInCanvas(mouse)) {
+    if (isInCanvas(getPosOnCanvas(mouse))) {
       factory.event("copy");
     }
   }
   if (e.code === "KeyV" && mControl) {
-    if (isInCanvas(mouse)) {
+    if (isInCanvas(getPosOnCanvas(mouse))) {
       factory.event("paste");
     }
   }
   if (e.code === "Delete" || e.code === "Backspace") {
-    if (isInCanvas(mouse)) {
+    if (isInCanvas(getPosOnCanvas(mouse))) {
       factory.event("canc");
     }
   }
