@@ -32,6 +32,8 @@
         </select>
         <button class="toolElement" onclick="reset()">Reset</button>
         <button class="toolElement" onclick="load()">Load</button>
+        <button class="toolElement" onclick="undo()">Undo</button>
+        <button class="toolElement" onclick="redo()">Redo</button>
       </div>
       
       <div class="section canvas">
@@ -77,6 +79,10 @@
     <script src="lib/factories/polyFact.js"></script>
     <script src="lib/factories/compFact.js"></script>
     <script src="lib/factories/select.js"></script>
+
+    <script src="lib/scene.js"></script>
+    <script src="lib/memento.js"></script>
+    <script src="lib/history.js"></script>
 
     <script src="test/shapes.js"></script>
 

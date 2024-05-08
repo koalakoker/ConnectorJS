@@ -1,8 +1,9 @@
 function updateScene(s) {
   if (s instanceof Shape) {
     scene.addShape(s);
+    history.push(scene.createMemento());
   }
-  txt.value = JSON.stringify(scene, serialize, 2);
+  txt.value = JSON.stringify(scene.getContent(), serialize, 2);
 }
 
 const lineFact = new LineFact(updateScene);

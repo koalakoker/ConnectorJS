@@ -3,7 +3,10 @@ const fps = 60;
 const dt = 1 / fps;
 const intervalID = setInterval(draw, 1000 / fps);
 
-let scene = new Composition();
+const history = new History();
+const scene = new Scene(new Composition());
+history.push(scene.createMemento());
+
 let factory = lineFact;
 let inputManager = new InputManager();
 
@@ -20,5 +23,13 @@ function reset() {
 function load() {
   scene.reset();
   const jsonString = txt.value;
-  scene = JSON.parse(jsonString, reviveScene);
+  scene.setContent(JSON.parse(jsonString, reviveScene));
+}
+
+function undo() {
+  scene.restoreFromMemento(history.undo());
+}
+
+function redo() {
+  scene.restoreFromMemento(history.redo());
 }

@@ -194,17 +194,6 @@ function handleCompChange() {
   setMode("composition");
 }
 
-// window.onload = function () {
-//   fetch("Scene.json")
-//     .then((response) => response.json())
-//     .then((data) => {
-//       const jsonString = JSON.stringify(data, null, 2);
-//       document.getElementById("txt").value = jsonString;
-//       scene = JSON.parse(jsonString, reviveScene);
-//     })
-//     .catch((error) => console.error("Error loading JSON file:", error));
-// };
-
 function isNumber(value) {
   return typeof value === "number" && !isNaN(value);
 }
