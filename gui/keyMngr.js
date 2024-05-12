@@ -12,35 +12,39 @@ function keydown(e) {
     e.code === "KeyZ" &&
     mControl === true &&
     mShift === false &&
-    mAlt === false
+    mAlt === false &&
+    isInCanvas(getPosOnCanvas(mouse))
   ) {
     undo();
+    e.preventDefault();
   }
   if (
     e.code === "KeyZ" &&
     mControl === true &&
     mShift === true &&
-    mAlt === false
+    mAlt === false &&
+    isInCanvas(getPosOnCanvas(mouse))
   ) {
     redo();
+    e.preventDefault();
   }
-  if (e.code === "KeyL" && noModifier()) {
+  if (e.code === "KeyL" && noModifier() && isInCanvas(getPosOnCanvas(mouse))) {
     setMode("line");
     e.preventDefault();
   }
-  if (e.code === "KeyC" && noModifier()) {
+  if (e.code === "KeyC" && noModifier() && isInCanvas(getPosOnCanvas(mouse))) {
     setMode("circle");
     e.preventDefault();
   }
-  if (e.code === "KeyA" && noModifier()) {
+  if (e.code === "KeyA" && noModifier() && isInCanvas(getPosOnCanvas(mouse))) {
     setMode("arc");
     e.preventDefault();
   }
-  if (e.code === "KeyR" && noModifier()) {
+  if (e.code === "KeyR" && noModifier() && isInCanvas(getPosOnCanvas(mouse))) {
     setMode("rect");
     e.preventDefault();
   }
-  if (e.code === "KeyP" && noModifier()) {
+  if (e.code === "KeyP" && noModifier() && isInCanvas(getPosOnCanvas(mouse))) {
     setMode("poly");
     e.preventDefault();
   }
@@ -51,6 +55,20 @@ function keydown(e) {
     factory.event("deselect");
     factory.event("escape");
   }
+  if (e.code === "KeyP" && mAlt) {
+    factory.event("setPivot");
+  }
+  if (e.code === "KeyC" && mControl && isInCanvas(getPosOnCanvas(mouse))) {
+    factory.event("copy");
+  }
+  if (e.code === "KeyV" && mControl && isInCanvas(getPosOnCanvas(mouse))) {
+    factory.event("paste");
+  }
+  if (e.code === "Delete" || e.code === "Backspace") {
+    if (isInCanvas(getPosOnCanvas(mouse))) {
+      factory.event("canc");
+    }
+  }
   if (e.key === "Control" || e.code === "MetaLeft" || e.code === "MetaRight") {
     mControl = true;
   }
@@ -60,24 +78,6 @@ function keydown(e) {
   }
   if (e.key === "Alt") {
     mAlt = true;
-  }
-  if (e.code === "KeyP" && mAlt) {
-    factory.event("setPivot");
-  }
-  if (e.code === "KeyC" && mControl) {
-    if (isInCanvas(getPosOnCanvas(mouse))) {
-      factory.event("copy");
-    }
-  }
-  if (e.code === "KeyV" && mControl) {
-    if (isInCanvas(getPosOnCanvas(mouse))) {
-      factory.event("paste");
-    }
-  }
-  if (e.code === "Delete" || e.code === "Backspace") {
-    if (isInCanvas(getPosOnCanvas(mouse))) {
-      factory.event("canc");
-    }
   }
   //console.log(e.code);
 }
